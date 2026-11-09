@@ -1,0 +1,209 @@
+.landing {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAFAFA;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%, #FFE0EE88 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 90%, #E8E0FF66 0%, transparent 55%);
+}
+
+/* Floating background icons */
+.landing__floaters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.landing__floater {
+  position: absolute;
+  bottom: -80px;
+  left: var(--fx);
+  font-size: var(--fs);
+  animation: floater-rise 9s ease-in infinite;
+  animation-delay: var(--fd);
+  opacity: 0;
+  filter: blur(0.5px);
+}
+
+@keyframes floater-rise {
+  0%   { transform: translateY(0)    rotate(0deg)  scale(0.8); opacity: 0; }
+  8%   { opacity: 0.3; }
+  85%  { opacity: 0.18; }
+  100% { transform: translateY(-110vh) rotate(25deg) scale(1.1); opacity: 0; }
+}
+
+.landing__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 24px 56px;
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Slime Robins 로고 — 컨테이너 없이 굵은 글자만 */
+.landing__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0.9;
+  gap: 0;
+}
+
+/* "SLIME 31" — 진갈색, 위 줄 */
+.landing__logo-top {
+  font-family: 'Black Han Sans', 'Jua', sans-serif;
+  font-size: clamp(52px, 14vw, 110px);
+  color: #4E1917;
+  letter-spacing: -2px;
+  line-height: 0.95;
+  text-shadow:
+    3px 3px 0 #2A0A08,
+    -1px -1px 0 #7A3530;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+}
+
+/* "ROBINS" — 핑크, 아래 줄 (살짝 더 크게) */
+.landing__logo-bottom {
+  font-family: 'Black Han Sans', 'Jua', sans-serif;
+  font-size: clamp(64px, 17vw, 134px);
+  color: #E5007D;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  text-shadow:
+    3px 3px 0 #8A0048,
+    -1px -1px 0 #FF60B0;
+  margin-top: -4px;
+}
+
+/* "31" — 파란색 텍스트 오른쪽에 인라인 배치 */
+.landing__logo-31 {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: clamp(18px, 4.5vw, 38px);
+  color: white;
+  background: #E5007D;
+  border-radius: 50%;
+  width: clamp(36px, 8vw, 60px);
+  height: clamp(36px, 8vw, 60px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: clamp(6px, 1.5vw, 12px);
+  box-shadow: 0 3px 12px rgba(233,30,140,0.45);
+  line-height: 1;
+  border: 3px solid white;
+  outline: 2px solid #E5007D;
+}
+
+/* Preview blobs */
+.landing__blobs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.landing__blob {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  animation: blob-pulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.landing__blob:nth-child(2) { width: 40px; height: 40px; }
+.landing__blob:nth-child(3) { width: 56px; height: 56px; }
+.landing__blob:nth-child(4) { width: 42px; height: 42px; }
+.landing__blob:nth-child(5) { width: 44px; height: 44px; }
+.landing__blob:nth-child(6) { width: 38px; height: 38px; }
+
+@keyframes blob-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Copy */
+.landing__copy {
+  font-size: clamp(15px, 4vw, 19px);
+  color: #444;
+  text-align: center;
+  line-height: 1.75;
+}
+
+.landing__copy strong {
+  color: #C84B7A;
+  font-family: 'Jua', sans-serif;
+}
+
+/* CTA button — bright, inviting */
+.landing__cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #E5007D 0%, #FF4DA6 50%, #FF9933 100%);
+  color: white;
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  box-shadow:
+    0 6px 24px rgba(229, 0, 125, 0.45),
+    0 2px 8px rgba(255, 77, 166, 0.3);
+  font-family: 'Black Han Sans', 'Jua', sans-serif;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.landing__cta:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 10px 32px rgba(229, 0, 125, 0.55),
+    0 4px 12px rgba(255, 77, 166, 0.4);
+  filter: brightness(1.08);
+}
+
+.landing__cta:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.landing__cta svg {
+  transition: transform 0.2s;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.landing__cta:hover svg {
+  transform: translateX(5px);
+}
+
+/* Hint */
+.landing__hint {
+  font-size: 13px;
+  color: #AAA;
+  margin-top: -12px;
+}
+
+/* 움직임 줄이기 설정: 무한 반복 장식 애니메이션을 끈다 */
+@media (prefers-reduced-motion: reduce) {
+  .landing__floater,
+  .landing__blob {
+    animation: none;
+  }
+}

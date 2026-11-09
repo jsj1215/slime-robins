@@ -1,0 +1,106 @@
+.showcase {
+  min-height: 100vh;
+  background: #FFF5F8;
+  padding-bottom: 60px;
+}
+
+/* === HEADER === */
+.showcase__header {
+  background: linear-gradient(135deg, #FF6B9D 0%, #C84B7A 100%);
+  color: white;
+  padding: 20px 16px 16px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 16px rgba(200,75,122,0.3);
+}
+
+/* Home logo button */
+.showcase__home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 12px;
+  padding: 6px 14px 6px 8px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  color: white;
+}
+
+.showcase__home-btn:hover {
+  background: rgba(255,255,255,0.28);
+  transform: scale(1.04);
+}
+
+.showcase__home-btn:active {
+  transform: scale(0.97);
+}
+
+.showcase__home-btn > span:first-child {
+  font-size: clamp(22px, 5vw, 32px);
+  line-height: 1;
+}
+
+.showcase__home-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  gap: 1px;
+}
+
+.showcase__home-top {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: clamp(12px, 2.8vw, 18px);
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.5px;
+}
+
+.showcase__home-bottom {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: clamp(14px, 3.5vw, 22px);
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.showcase__tagline {
+  font-size: clamp(11px, 3vw, 14px);
+  opacity: 0.92;
+  margin-top: 3px;
+}
+
+/* === SECTION === */
+.showcase__section {
+  padding: 20px 12px 4px;
+}
+
+.showcase__section-title {
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-primary);
+  font-family: 'Jua', sans-serif;
+}
+
+.showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .showcase__grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 768px) {
+  .showcase__grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .showcase__section { padding: 24px 20px 6px; }
+}
+@media (min-width: 1200px) {
+  .showcase__grid { grid-template-columns: repeat(6, 1fr); }
+  .showcase__section { padding: 28px 40px 8px; }
+}
