@@ -2,6 +2,8 @@
 
 아이스크림 가게처럼 31가지 슬라임 "맛"을 고르고, 고른 슬라임을 손가락으로 늘리고 누르고 두드리며 ASMR 소리를 듣는 인터랙티브 웹 장난감입니다.
 
+**[🍦 바로 해보기 → slime-robins.web.app](https://slime-robins.web.app/)** (Firebase Hosting)
+
 [🔗 소개 페이지 열기](https://html-preview.github.io/?url=https://github.com/jsj1215/slime-robins/blob/main/docs/intro.html) · [docs/intro.html](docs/intro.html)
 
 > GitHub Pages를 켜면 `https://jsj1215.github.io/slime-robins/docs/intro.html` 에서도 소개 페이지를 볼 수 있습니다.
@@ -53,6 +55,17 @@ npm test         # Vitest (감시 모드, 한 번만 돌리려면 npm test -- --
 ```
 
 소리는 첫 터치나 클릭 때 켜집니다. 브라우저 자동 재생 정책 때문입니다. 이어폰을 끼면 노이즈 질감이 더 잘 들립니다. Web Audio를 쓸 수 없는 환경에서는 소리만 빠지고 만지기와 물리는 그대로 동작합니다.
+
+### 배포 (Firebase Hosting)
+
+백엔드가 없는 정적 사이트라 빌드 결과(`dist/`)만 Firebase Hosting에 올립니다. 설정은 `firebase.json`(배포 폴더 `dist`, 모든 경로를 `index.html`로 연결)과 `.firebaserc`(프로젝트 ID `slime-robins`)에 있습니다.
+
+```bash
+npm install -g firebase-tools
+firebase login
+npm run build
+firebase deploy --only hosting   # https://slime-robins.web.app
+```
 
 ## 기술 설계
 
