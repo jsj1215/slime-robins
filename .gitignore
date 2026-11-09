@@ -37,3 +37,6 @@ dist-ssr
 
 # AI 에이전트 지침 파일 (공개하지 않음)
 CLAUDE.md
+
+# Firebase 배포 캐시
+.firebase/
