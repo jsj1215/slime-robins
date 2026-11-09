@@ -1,0 +1,41 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #FFF0F5;
+  --color-primary: #FF6B9D;
+  --color-secondary: #C84B7A;
+  --color-accent: #FFE0EE;
+  --color-text: #2D1B2E;
+  --color-text-light: #7A5A7E;
+  --font-main: 'Jua', 'Gaegu', system-ui, sans-serif;
+  --radius-cup: 16px;
+  --shadow-cup: 0 4px 16px rgba(200, 75, 122, 0.15);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}

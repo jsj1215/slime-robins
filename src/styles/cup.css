@@ -1,0 +1,155 @@
+.cup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(200, 75, 122, 0.1);
+  transition: transform 0.18s, box-shadow 0.18s;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 8px 6px 8px;
+  position: relative;
+  overflow: visible;
+}
+
+.cup:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 10px 28px rgba(200, 75, 122, 0.22);
+  border-color: #FFB0CC;
+}
+
+.cup:active {
+  transform: translateY(-2px) scale(0.97);
+}
+
+/* No.XX badge */
+.cup__num {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  background: #FFE0EE;
+  border-radius: 6px;
+  padding: 1px 5px;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-family: 'Jua', sans-serif;
+}
+
+/* Scoop */
+.cup__scoop {
+  width: 60px;
+  height: 56px;
+  border-radius: 50% 50% 42% 42%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scoop-float 3.4s ease-in-out infinite;
+  flex-shrink: 0;
+  margin-bottom: -2px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+@keyframes scoop-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-5px) rotate(1deg); }
+}
+
+.cup__gloss {
+  position: absolute;
+  top: 10%;
+  left: 16%;
+  width: 30%;
+  height: 22%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.8), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cup__emoji {
+  font-size: 20px;
+  z-index: 1;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+}
+
+/* Waffle cone */
+.cup__cone {
+  width: 54px;
+  height: 44px;
+  position: relative;
+  flex-shrink: 0;
+  clip-path: polygon(8% 0%, 92% 0%, 54% 100%, 46% 100%);
+  background-color: #C8860A;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px, transparent 5px,
+      rgba(255,230,140,0.3) 5px, rgba(255,230,140,0.3) 6px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px, transparent 5px,
+      rgba(255,230,140,0.3) 5px, rgba(255,230,140,0.3) 6px
+    ),
+    linear-gradient(180deg, #E8A020 0%, #C07010 55%, #A05800 100%);
+}
+
+.cup__cone::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: #F0B030;
+  clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 3% 100%);
+}
+
+/* Labels */
+.cup__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding-top: 5px;
+  width: 100%;
+}
+
+.cup__name {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.2;
+  word-break: keep-all;
+  font-family: 'Jua', sans-serif;
+}
+
+.cup__flavor {
+  font-size: 9px;
+  color: var(--color-text-light);
+  text-align: center;
+  word-break: keep-all;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .cup { padding: 10px 8px 10px; border-radius: 16px; }
+  .cup__scoop { width: 72px; height: 68px; }
+  .cup__cone { width: 66px; height: 52px; }
+  .cup__emoji { font-size: 26px; }
+  .cup__name { font-size: 12px; }
+  .cup__flavor { font-size: 10px; }
+  .cup__num { font-size: 10px; top: 7px; left: 7px; }
+}
+
+/* 움직임 줄이기 설정: 아이스크림 떠다니는 애니메이션을 끈다 */
+@media (prefers-reduced-motion: reduce) {
+  .cup__scoop {
+    animation: none;
+  }
+}
